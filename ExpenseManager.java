@@ -29,6 +29,16 @@ public class ExpenseManager {
         return total;
     }
 
+    public double getTotalByCategory(String category) {
+        double total = 0;
+        for (int i = 0; i < expenses.size(); i++) {
+            if (expenses.get(i).getCategory().equals(category)) {
+                total = total + expenses.get(i).getAmount();
+            }
+        }
+        return total;
+    }
+
     public double getRemainingBudget() {
         return monthlyBudget - getTotalSpent();
     }
