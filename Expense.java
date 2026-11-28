@@ -24,9 +24,9 @@ public class Expense implements Comparable<Expense> {
         return date + "," + cleanDesc + "," + category + "," + amount;
     }
 
-    // Allows Collections.sort() to sort expenses newest-first
+    // Allows Collections.sort() to sort expenses from highest amount to lowest
     @Override
     public int compareTo(Expense other) {
-        return other.date.compareTo(this.date);
+        return Double.compare(other.amount, this.amount);
     }
 }
